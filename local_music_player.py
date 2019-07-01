@@ -12,6 +12,7 @@ from tkinter import filedialog
 from traceback import *
 from win32com.client import Dispatch
 import time,eyed3,threading
+from eyed3 import mp3
 
 name = []
 
@@ -24,8 +25,9 @@ def openfile(index = [1]):
       media = wmp.newMedia(filenames[i])
       wmp.currentPlaylist.appendItem(media)
 
-      print(filenames[i])
-      coco = eyed3.load(filenames[i])  # eyed3模块读取mp3信息
+      print("test:" + filenames[i])
+      coco = mp3.Mp3AudioFile(filenames[i])  # 模块更新，采用mp3.Mp3AudioFile访问目标文件
+      # coco = eyed3.load(r"D:\C\Python实训\python实现本地音乐播放器\3.mp3")  # eyed3模块读取mp3信息
       total = int(coco.info.time_secs)
       minute = int(coco.info.time_secs)//60
       sec = int(coco.info.time_secs)%60

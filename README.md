@@ -18,4 +18,6 @@
 
 如果遇到PhotoImage报错： couldn't recognize data in image file，需要用格式工厂转换成gif图片，PhotoImage不是看图片后缀名，而是图片本身的类型。
 
-如果遇到错误“name 'filedialog' is not defined”，需要在前面加上from tkinter import filedialog（单独淡入？）或者import tkinter as tk
+如果遇到错误“name 'filedialog' is not defined”，需要在前面加上from tkinter import filedialog或者import tkinter as tk
+
+eyed3.load报错，读取为空，eyed3模块升级，需要使用mp3.Mp3AudioFile读取
